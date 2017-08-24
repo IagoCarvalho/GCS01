@@ -13,7 +13,6 @@ os: linux
 
 script:
   - ./manage.py migrate 
-  - pytest
 
 sudo: enabled
 dist: trusty
