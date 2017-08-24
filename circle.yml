@@ -1,0 +1,7 @@
+deployment:
+  staging:
+    branch: master
+    heroku:
+      appname: gcs01-iagocarvalho-circle
+
+
