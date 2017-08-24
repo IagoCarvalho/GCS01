@@ -1,6 +1,12 @@
+#Linguagem do projeto
 language: python
+
+#Sistema operacional
 os: linux
+
+#Ambiente Django
+env:
+    - DJANGO_VERSION=1.1.0
+
 sudo: enabled
 dist: trusty
-
-install: ./install-dependencies.sh
