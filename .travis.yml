@@ -1,4 +1,6 @@
 language: python
-
+os: linux
 sudo: enabled
 dist: trusty
+
+install: ./install-dependencies.sh
