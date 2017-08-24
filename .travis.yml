@@ -1,12 +1,19 @@
 #Linguagem do projeto
 language: python
 
+python:
+  - "3.5"
+
+# Dependencias
 install:
-    # Dependencias
     - pip install -r requirements.txt
 
 #Sistema operacional
 os: linux
+
+script:
+  - ./manage.py migrate 
+  - pytest
 
 sudo: enabled
 dist: trusty
