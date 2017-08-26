@@ -1,1 +1,2 @@
-web: gunicorn mysite.wsgi:application
+web: gunicorn djangobasico.wsgi:application
+web: python manage.py runserver
