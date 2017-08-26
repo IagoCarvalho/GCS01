@@ -12,7 +12,9 @@ install:
 os: linux
 
 script:
-  - ./manage.py migrate 
+  - ./manage.py migrate
+  - python manage.py test
+  - flake8 --exclude polls/migrations/,manage.py  . 
 
 sudo: enabled
 dist: trusty
