@@ -1,2 +1,1 @@
-web: gunicorn djangobasico.wsgi:application
-web: python manage.py runserver
+web: python ./manage.py runserver 0.0.0.0:$PORT
