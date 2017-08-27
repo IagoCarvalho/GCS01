@@ -1,20 +1,17 @@
-#Linguagem do projeto
 language: python
-
 python:
-  - "3.5"
-
-# Dependencias
+- '3.5'
 install:
-    - pip install -r requirements.txt
-
-#Sistema operacional
+- pip install -r requirements.txt
 os: linux
-
 script:
-  - ./manage.py migrate
-  - python manage.py test
-  - flake8 --exclude polls/migrations/,manage.py  . 
-
+- ./manage.py migrate
+- python manage.py test
+- flake8 --exclude polls/migrations/,manage.py  .
 sudo: enabled
 dist: trusty
+deploy:
+  provider: heroku
+  api_key:
+    secure: vyv6HtT14YqXNxhXsLW3vZSNjSqZMbk7o1HagOu7A9F/TMhejmjXMriRTDsWZltYoj1exRsGbdGNY4ye/3N5vsuo66Q+6T6rQ9NvULLt52U0Oo4t1pPZFfae1TApTgbT1Kzzyu848xG3a71mpbkqlPjRNmHb1fTkoAzx49Cr1bV5toPsHjB0Vb5jX6VBjXPWj9DSx+x0tNwAyg4fDIEE9kk8clUV4I7qnjFxZ13TIPQ/rKDDBi42AtvJ+ekISWkEQfnba++fqnJnL/kclYNVu5QCU5UB00nNKDB/0g01oesMty9OiCBecQZmPJFlM7w1Zk2MjHyL/uQVy5nP8XRjsBTEtKSiQp8CYbXtGqpwaQ51VU0R4rnZsYBdwbbfLuaM1njHh+K2reTxOKzsKpycLbCYeA1xUMMxuFHiVZc+DEa1jq+yZHRAE2IkoiIJCV+iQ9PqkQe46089wXt+GcptLpHe79hN4CPauR02UcsoKzAn0K/veEYKZe6sGU47+4mGj0ahWzdFByIUFVhMHao5ob+hPD7uFyU/IT+4h5NEgZyDTkIem5fPQf10sHKk9X/xL/TaS+9jWJ0iGZTCZFm8zA0SPFgo6hF653oMHWfTz6BYKOgoHygobYm1lbfiN7uFpFupkvIIJ4O9raocodAQv/IKSJEIoH92zv4RHcK2CdY=
+  app: gcs01-iagocarvalho-travis
